@@ -1,0 +1,44 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}AgentMer index
+{% endblock %}
+
+{% block body %}
+	<h1>AgentMer index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Grade</th>
+				<th>Email</th>
+				<th>Psw</th>
+				<th>Tel</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for agent_mer in agent_mers %}
+				<tr>
+					<td>{{ agent_mer.id }}</td>
+					<td>{{ agent_mer.nom }}</td>
+					<td>{{ agent_mer.prenom }}</td>
+					<td>{{ agent_mer.grade }}</td>
+					<td>{{ agent_mer.email }}</td>
+					<td>{{ agent_mer.psw }}</td>
+					<td>{{ agent_mer.tel }}</td>
+					<td>
+						<a href="{{ path('app_agent_mer_show', {'id': agent_mer.id}) }}">show</a>
+						<a href="{{ path('app_agent_mer_edit', {'id': agent_mer.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="8">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

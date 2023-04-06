@@ -1,0 +1,167 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block body %}
+
+	<div class="page-wrapper">
+		<div class="container-fluid" id="container-wrapper">
+			<div class="card">
+				<div class="d-sm-flex align-items-center justify-content-between">
+					<h5 class=" mb-0 text-gray-800 pl-3">Boats</h5>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="">Dashboard</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a href="">Boats</a>
+						</li>
+					</ol>
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-lg-12">
+					<div class="card mb-4">
+						<div class="table-responsive p-3">
+							<div id="geniustable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+								<div class="row btn-area">
+									<div class="col-sm-4">
+										<div class="dataTables_length" id="geniustable_length">
+											<label>Show
+												<select name="geniustable_length" aria-controls="geniustable" class="custom-select custom-select-sm form-control form-control-sm">
+													<option value="10">10</option>
+													<option value="25">25</option>
+													<option value="50">50</option>
+													<option value="100">100</option>
+												</select>
+												entries
+											</label>
+										</div>
+									</div>
+									<div class="col-sm-4"></div>
+									<div class="col-sm-12 col-md-4 pr-3 text-right">
+										<a class="btn btn-primary" href=" {{ path('app_bateaux_new') }}">
+											<i class="fas fa-plus"></i>
+											Add New Boats
+										</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<table id="geniustable" class="table table-hover dt-responsive dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="geniustable_info" style="width: 100%;">
+
+											<thead>
+												<tr>
+													<th>Id</th>
+													<th>Mat</th>
+													<th>Port</th>
+													<th>Type</th>
+													<th>Longeur</th>
+													<th>Largeur</th>
+													<th>Hauteur</th>
+													<th>Numserie</th>
+													<th>Marque</th>
+													<th>Tonnage</th>
+													<th>actions</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for bateaux in bateauxes %}
+													<tr>
+														<td>{{ bateaux.id }}</td>
+														<td>{{ bateaux.Mat }}</td>
+														<td>{{ bateaux.port }}</td>
+														<td>{{ bateaux.type }}</td>
+														<td>{{ bateaux.longeur }}</td>
+														<td>{{ bateaux.largeur }}</td>
+														<td>{{ bateaux.hauteur }}</td>
+														<td>{{ bateaux.numserie }}</td>
+														<td>{{ bateaux.marque }}</td>
+														<td>{{ bateaux.tonnage }}</td>
+														<td>
+															<form method="post" action="{{ path('app_bateaux_delete', {'id': bateaux.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+
+																<a href="{{ path('app_bateaux_show', {'id': bateaux.id}) }}" class="btn btn-info btn-sm px-3">
+																	<i class="fa-sharp fa-regular fa-eye"></i>
+																</a>
+																<a href="{{ path('app_bateaux_edit', {'id': bateaux.id}) }}" class="btn btn-success btn-sm px-3">
+																	<i class="fa-solid fa-pen-to-square"></i>
+																</a>
+																<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ bateaux.id) }}">
+																<button class="btn btn-danger">
+																	<i class="fa-solid fa-trash"></i>
+																</button>
+															</form>
+
+														</td>
+													</tr>
+												{% else %}
+													<tr>
+														<td colspan="11">no records found</td>
+													</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+		{% endblock %}
+
+
+		{# {% extends 'base.html.twig' %}
+																				
+																				{% block title %}Bateaux index{% endblock %}
+																				
+																				{% block body %}
+																				    <h1>Bateaux index</h1>
+																				
+																				    <table class="table">
+																				        <thead>
+																				            <tr>
+																				                <th>Id</th>
+																				                <th>Mat</th>
+																				                <th>Port</th>
+																				                <th>Type</th>
+																				                <th>Longeur</th>
+																				                <th>Largeur</th>
+																				                <th>Hauteur</th>
+																				                <th>Numserie</th>
+																				                <th>Marque</th>
+																				                <th>Tonnage</th>
+																				                <th>actions</th>
+																				            </tr>
+																				        </thead>
+																				        <tbody>
+																				        {% for bateaux in bateauxes %}
+																				            <tr>
+																				                <td>{{ bateaux.id }}</td>
+																				                <td>{{ bateaux.Mat }}</td>
+																				                <td>{{ bateaux.port }}</td>
+																				                <td>{{ bateaux.type }}</td>
+																				                <td>{{ bateaux.longeur }}</td>
+																				                <td>{{ bateaux.largeur }}</td>
+																				                <td>{{ bateaux.hauteur }}</td>
+																				                <td>{{ bateaux.numserie }}</td>
+																				                <td>{{ bateaux.marque }}</td>
+																				                <td>{{ bateaux.tonnage }}</td>
+																				                <td>
+																				                    <a href="{{ path('app_bateaux_show', {'id': bateaux.id}) }}">show</a>
+																				                    <a href="{{ path('app_bateaux_edit', {'id': bateaux.id}) }}">edit</a>
+																				                </td>
+																				            </tr>
+																				        {% else %}
+																				            <tr>
+																				                <td colspan="11">no records found</td>
+																				            </tr>
+																				        {% endfor %}
+																				        </tbody>
+																				    </table>
+																				
+																				    <a href="{{ path('app_bateaux_new') }}">Create new</a>
+																				{% endblock %} #}

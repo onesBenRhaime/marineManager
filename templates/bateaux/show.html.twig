@@ -1,0 +1,166 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+
+	<!-- Container Fluid-->
+	<div class="container-fluid" id="container-wrapper">
+		<div class="card">
+			<div class="d-sm-flex align-items-center py-3 justify-content-between">
+				<h5 class="mb-0 text-gray-800 pl-3">
+					Details  Boats
+				</h5>
+				<ol class="breadcrumb py-0 m-0">
+					<li class="breadcrumb-item">
+						<a href="">Dashboard</a>
+					</li>
+
+					<li class="breadcrumb-item">
+						<a href="">Boats
+																																																																																																																                    ></li>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="">Details</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="row justify-content-center mt-3">
+			<div
+				class="col-md-10">
+				<!-- Form Basic -->
+				<div class="card mb-4">
+					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+						<h6 class="m-0 font-weight-bold text-primary">
+							Boats
+						</h6>
+					</div>
+
+					<div class="card-body">
+						<div class="gocover" style="
+																																																																																																																                        background: url(https://product.geniusocean.com/genius-bank/assets/images/33CiUFaI1641808748.gif)
+																																																																																																																                          no-repeat scroll center center rgba(45, 45, 45, 0.5);
+																																																																																																																                      "></div>
+
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Id</th>
+									<td>{{ bateaux.id }}</td>
+								</tr>
+								<tr>
+									<th>Mat</th>
+									<td>{{ bateaux.Mat }}</td>
+								</tr>
+								<tr>
+									<th>Port</th>
+									<td>{{ bateaux.port }}</td>
+								</tr>
+								<tr>
+									<th>Type</th>
+									<td>{{ bateaux.type }}</td>
+								</tr>
+								<tr>
+									<th>Longeur</th>
+									<td>{{ bateaux.longeur }}</td>
+								</tr>
+								<tr>
+									<th>Largeur</th>
+									<td>{{ bateaux.largeur }}</td>
+								</tr>
+								<tr>
+									<th>Hauteur</th>
+									<td>{{ bateaux.hauteur }}</td>
+								</tr>
+								<tr>
+									<th>Numserie</th>
+									<td>{{ bateaux.numserie }}</td>
+								</tr>
+								<tr>
+									<th>Marque</th>
+									<td>{{ bateaux.marque }}</td>
+								</tr>
+								<tr>
+									<th>Tonnage</th>
+									<td>{{ bateaux.tonnage }}</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="row">
+							<div class="col-md-8"></div>
+							<div class="col-md-4">
+								<a class="col-md-3 pramiry">
+									{{ include('bateaux/_delete_form.html.twig') }}</a>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Row-->
+	</div>
+	<!---Container Fluid-->
+{% endblock %}
+
+
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Bateaux{% endblock %}
+
+{% block body %}
+    <h1>Bateaux</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bateaux.id }}</td>
+            </tr>
+            <tr>
+                <th>Mat</th>
+                <td>{{ bateaux.Mat }}</td>
+            </tr>
+            <tr>
+                <th>Port</th>
+                <td>{{ bateaux.port }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bateaux.type }}</td>
+            </tr>
+            <tr>
+                <th>Longeur</th>
+                <td>{{ bateaux.longeur }}</td>
+            </tr>
+            <tr>
+                <th>Largeur</th>
+                <td>{{ bateaux.largeur }}</td>
+            </tr>
+            <tr>
+                <th>Hauteur</th>
+                <td>{{ bateaux.hauteur }}</td>
+            </tr>
+            <tr>
+                <th>Numserie</th>
+                <td>{{ bateaux.numserie }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ bateaux.marque }}</td>
+            </tr>
+            <tr>
+                <th>Tonnage</th>
+                <td>{{ bateaux.tonnage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bateaux_index') }}">back to list</a>
+
+    <a href="{{ path('app_bateaux_edit', {'id': bateaux.id}) }}">edit</a>
+
+    {{ include('bateaux/_delete_form.html.twig') }}
+{% endblock %} #}

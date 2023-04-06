@@ -1,0 +1,68 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block body %}
+
+
+	<!-- Container Fluid-->
+	<div class="container-fluid" id="container-wrapper">
+		<br/>
+		<br/>
+		<br/>
+		<div class="row justify-content-center mt-3">
+			<div
+				class="col-md-10">
+				<!-- Form Basic -->
+				<div class="card mb-4">
+					<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+						<h3 class="m-0 font-weight-bold text-primary">
+							Add New  Reclamation
+						</h3>
+					</div>
+
+					<div class="card-body">
+						<div class="gocover" style="background: url(https://product.geniusocean.com/genius-bank/assets/images/33CiUFaI1641808748.gif) no-repeat scroll center center rgba(45, 45, 45, 0.5);"></div>
+						{{form_start(form)}}
+						<div class="form-group">
+							{{form_label(form.idAgent,'Agent Mer : ',{'attr':{'class':'form-label'}})}}
+							{{form_widget(form.idAgent,{'attr':{'class':'form-select'}})}}
+						</div>
+						<br/>
+
+						<div class="form-group">
+							{{form_label(form.emailAgent,'Email  : ',{'attr':{'class':'form-label'}})}}
+							{{form_widget(form.emailAgent,{'attr':{'class':'form-control'}})}}
+						</div>
+						<br/>
+						<div class="form-group">
+							{{form_label(form.description,'Description : ',{'attr':{'class':'form-label'}})}}
+							{{form_widget(form.description,{'attr':{'class':'form-control'}})}}
+						</div>
+						<br/>
+						{{form_widget(form.save,{'attr':{'class':'btn btn-primary w-100'}})}}
+
+						{{form_end(form)}}
+					</div>
+				</div>
+
+				<!-- Form Sizing -->
+
+				<!-- Horizontal Form -->
+			</div>
+		</div>
+		<!--Row-->
+	</div>
+	<!---Container Fluid-->
+{% endblock %}
+
+
+{# {% extends 'base.html.twig' %}
+
+{% block title %}New Reclamation{% endblock %}
+
+{% block body %}
+    <h1>Create new Reclamation</h1>
+
+    {{ include('reclamation/_form.html.twig') }}
+
+    <a href="{{ path('app_reclamation_index') }}">back to list</a>
+{% endblock %} #}

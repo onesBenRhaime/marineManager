@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AgentMer
+{% endblock %}
+
+{% block body %}
+	<h1>AgentMer</h1>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ agent_mer.id }}</td>
+			</tr>
+			<tr>
+				<th>Nom</th>
+				<td>{{ agent_mer.nom }}</td>
+			</tr>
+			<tr>
+				<th>Prenom</th>
+				<td>{{ agent_mer.prenom }}</td>
+			</tr>
+			<tr>
+				<th>Grade</th>
+				<td>{{ agent_mer.grade }}</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>{{ agent_mer.email }}</td>
+			</tr>
+			<tr>
+				<th>Psw</th>
+				<td>{{ agent_mer.psw }}</td>
+			</tr>
+			<tr>
+				<th>Tel</th>
+				<td>{{ agent_mer.tel }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_agent_mer_index') }}">back to list</a>
+
+	<a href="{{ path('app_agent_mer_edit', {'id': agent_mer.id}) }}">edit</a>
+
+	{{ include('agent_mer/_delete_form.html.twig') }}
+{% endblock %}
