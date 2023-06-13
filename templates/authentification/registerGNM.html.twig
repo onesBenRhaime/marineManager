@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<!-- Mirrored from product.geniusocean.com/genius-bank/user/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Feb 2023 12:07:47 GMT -->
+	<!-- Added by HTTrack -->
+	<meta
+	http-equiv="content-type" content="text/html;charset=UTF-8"/> <!-- /Added by HTTrack -->
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<meta name="keywords" content="Genius,Ocean,Sea,Etc,Genius,Ocean,SeaGenius,Ocean,Sea,Etc,Genius,Ocean,SeaGenius,Ocean,Sea,Etc,Genius,Ocean,Sea">
+		<meta name="author" content="GeniusOcean">
+		<title>Marine Manager</title>
+
+		<link rel="stylesheet" href="../assets/front/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../assets/front/css/animate.css"/>
+		<link rel="stylesheet" href="../assets/front/css/all.min.css"/>
+		<link rel="stylesheet" href="../assets/front/css/lightbox.min.css"/>
+		<link rel="stylesheet" href="../assets/front/css/odometer.css"/>
+		<link rel="stylesheet" href="../assets/front/css/owl.min.css"/>
+		<link rel="stylesheet" href="../assets/front/css/main.css"/>
+		<link rel="stylesheet" href="../assets/front/css/toastr.min.css">
+
+		<link rel="stylesheet" href="../assets/front/css/styles93e6.css?color=0ba026">
+		<link href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" id="colorr" href="../assets/front/css/font9411.css?font_familly=Manrope">
+		<link rel="shortcut icon" href="../assets/images/16393007481563335660service-icon-1.png">
+
+	</head>
+
+	<body>
+
+		<!-- Header -->
+		<header class="position-relative">
+
+			<div class="navbar-bottom">
+				<div class="container">
+					<div class="navbar-wrapper">
+						<div class="logo">
+							<a href="../index.html">
+								<h3>Marine Manager</h3>
+								{# <img src="../assets/images/Stww4kQy1645001015.png" alt="logo"/> #}
+							</a>
+						</div>
+
+						<div class="nav-toggle d-lg-none">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="nav-menu-area">
+							<div class="menu-close text--danger d-lg-none">
+								<i class="fas fa-times"></i>
+							</div>
+							<ul class="nav-menu">
+
+								<li>
+									<div class="btn__grp ms-lg-3">
+										<a href="{{ path('app_login')}}" class="cmn--btn">Login Now</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- Header -->
+
+		<!-- Hero -->
+		<section class="hero-section bg--overlay bg_img" data-img="../assets/images/4oHWW9wP1647317756.html">
+			<div class="container">
+				<div class="hero-content">
+					<h2 class="hero-title"></h2>
+					<ul class="breadcrumb">
+						<li>
+							<a href="../index.html">Home</a>
+						</li>
+						<li>
+							Registration
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- Hero -->
+
+		<!-- Account -->
+		<section class="account-section pt-100 pb-100">
+			<div class="container">
+				<div class="account-wrapper bg--body">
+					<div class="section-title mb-3">
+						<h6 class="subtitle text--base">Sign Up</h6>
+						<h3 class="title">Create Now Account Garde National
+						</h3>
+					</div>
+					<form class="account-form row gy-3 gx-4 align-items-center">
+						{{form_start(form)}}
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{form_label(form.nom,'Your First Name : ',{'attr':{'class':'form-label'}})}}
+								{{form_widget(form.nom,{'attr':{'class':'form-control form--control'}})}}
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{form_label(form.prenom,'Your Seconde Name : ',{'attr':{'class':'form-label'}})}}
+								{{form_widget(form.prenom,{'attr':{'class':'form-control form--control'}})}}
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{form_label(form.email,'Your Email : ',{'attr':{'class':'form-label'}})}}
+								{{form_widget(form.email,{'attr':{'class':'form-control form--control'}})}}
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{form_label(form.tel,'Your Phone : ',{'attr':{'class':'form-label'}})}}
+								{{form_widget(form.tel,{'attr':{'class':'form-control form--control'}})}}
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{form_label(form.psw,'Your Password : ',{'attr':{'class':'form-label'}})}}
+								{{form_widget(form.psw,{'attr': {'class': 'form-control form--control', 'type': 'password', 'input[type="password"]': '******'}})}}
+							</div>
+						</div>
+						<div class="col-sm-12 d-flex flex-wrap justify-content-between align-items-center">
+
+							{{form_widget(form.save,{'attr':{'class':'btn btn bg--base me-3'}})}}
+							<div class="text-end">
+								<a href="{{ path('app_registerAgentMer')}}" class="text--base">
+									As Agent Mer ?</a>
+							</div>
+						</div>
+						{{ form_end(form) }}
+					</form>
+
+				</div>
+			</div>
+		</section>
+		<!-- Account -->
+
+
+		<script src="../assets/front/js/jquery-3.6.0.min.js"></script>
+		<script src="../assets/front/js/bootstrap.min.js"></script>
+		<script src="../assets/front/js/viewport.jquery.js"></script>
+		<script src="../assets/front/js/odometer.min.js"></script>
+		<script src="../assets/front/js/lightbox.min.js"></script>
+		<script src="../assets/front/js/owl.min.js"></script>
+		<script src="../assets/front/js/toastr.min.js"></script>
+		<script src="../assets/front/js/notify.js"></script>
+		<script src="../assets/front/js/main.js"></script>
+		<script src="../assets/front/js/custom.js"></script>
+
+		<script>
+			'use strict';
+let mainurl = 'https://product.geniusocean.com/genius-bank';
+		</script>
+
+		<script>
+			'use strict';
+		</script>
+
+		<script>
+			'use strict';
+
+$('.apply-loan').on('click', function () {
+let id = $(this).data('id');
+let title = $(this).data('title');
+
+$('#planId').val(id);
+$('.loan-title').text(title);
+});
+
+$('.apply-pension').on('click', function () {
+let id = $(this).data('id');
+let title = $(this).data('title');
+
+$('#fdrplan').val(id);
+$('.loan-title').text(title);
+});
+		</script>
+
+	</body>
+
+
+	<!-- Mirrored from product.geniusocean.com/genius-bank/user/login by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Feb 2023 12:07:51 GMT -->
+
+</html>

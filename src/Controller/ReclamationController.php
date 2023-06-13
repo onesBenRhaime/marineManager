@@ -21,6 +21,23 @@ class ReclamationController extends AbstractController
         ]);
     }
 
+    #[Route('/listReclamationGNM', name: 'app_listReclamationGNM', methods: ['GET'])]
+    public function listReclamationGNM(ReclamationRepository $reclamationRepository): Response
+    {
+        return $this->render('reclamation/listRecGNM.html.twig', [
+            'reclamations' => $reclamationRepository->findAll(),
+        ]);
+    }
+    #[Route('/listReclamationAgent', name: 'app_listReclamationAgent', methods: ['GET'])]
+    public function listReclamationAgent(ReclamationRepository $reclamationRepository): Response
+    {
+        return $this->render('reclamation/listRecAgent.html.twig', [
+            'reclamations' => $reclamationRepository->findAll(),
+        ]);
+    }
+
+
+
     #[Route('/new', name: 'app_reclamation_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ReclamationRepository $reclamationRepository): Response
     {

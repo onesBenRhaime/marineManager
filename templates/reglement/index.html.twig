@@ -23,24 +23,12 @@
 						<div class="table-responsive p-3">
 							<div id="geniustable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
 								<div class="row btn-area">
-									<div class="col-sm-4">
-										<div class="dataTables_length" id="geniustable_length">
-											<label>Show
-												<select name="geniustable_length" aria-controls="geniustable" class="custom-select custom-select-sm form-control form-control-sm">
-													<option value="10">10</option>
-													<option value="25">25</option>
-													<option value="50">50</option>
-													<option value="100">100</option>
-												</select>
-												entries
-											</label>
-										</div>
-									</div>
-									<div class="col-sm-4"></div>
+
+									<div class="col-sm-8"></div>
 									<div class="col-sm-12 col-md-4 pr-3 text-right">
-										<a class="btn btn-primary" href=" {{ path('app_bateaux_new') }}">
+										<a class="btn btn-primary" href=" {{ path('app_reglement_new') }}">
 											<i class="fas fa-plus"></i>
-											Add New Boats
+											Add New Settlement
 										</a>
 									</div>
 								</div>
@@ -50,7 +38,7 @@
 
 											<thead>
 												<tr>
-													<th>Id</th>
+
 													<th>Num</th>
 													<th>Mat</th>
 													<th>Date</th>
@@ -61,14 +49,17 @@
 											<tbody>
 												{% for reglement in reglements %}
 													<tr>
-														<td>{{ reglement.id }}</td>
+
 														<td>{{ reglement.num }}</td>
 														<td>{{ reglement.mat }}</td>
 														<td>{{ reglement.date ? reglement.date|date('Y-m-d') : '' }}</td>
 														<td>{{ reglement.duree }}</td>
 														<td>
-															<a href="{{ path('app_reglement_show', {'id': reglement.id}) }}">show</a>
-															<a href="{{ path('app_reglement_edit', {'id': reglement.id}) }}">edit</a>
+															<a href="{{ path('app_reglement_show', {'id': reglement.id}) }}" class="btn btn-info">
+																<i class="fa-sharp fa-regular fa-eye"></i>
+																show</a>
+															<a href="{{ path('app_reglement_edit', {'id': reglement.id}) }}" class="btn btn-success">
+																<i class="fa-solid fa-pen-to-square"></i>edit</a>
 														</td>
 													</tr>
 												{% else %}
@@ -93,42 +84,42 @@
 
 
 		{# 
-								
-							
-								{% block body %}
-									<h1>Reglement index</h1>
-								
-									<table class="table">
-										<thead>
-											<tr>
-												<th>Id</th>
-												<th>Num</th>
-												<th>Mat</th>
-												<th>Date</th>
-												<th>Duree</th>
-												<th>actions</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% for reglement in reglements %}
-												<tr>
-													<td>{{ reglement.id }}</td>
-													<td>{{ reglement.num }}</td>
-													<td>{{ reglement.mat }}</td>
-													<td>{{ reglement.date ? reglement.date|date('Y-m-d') : '' }}</td>
-													<td>{{ reglement.duree }}</td>
-													<td>
-														<a href="{{ path('app_reglement_show', {'id': reglement.id}) }}">show</a>
-														<a href="{{ path('app_reglement_edit', {'id': reglement.id}) }}">edit</a>
-													</td>
-												</tr>
-											{% else %}
-												<tr>
-													<td colspan="6">no records found</td>
-												</tr>
-											{% endfor %}
-										</tbody>
-									</table>
-								
-									<a href="{{ path('app_reglement_new') }}">Create new</a>
-								{% endblock %} #}
+																																								
+																																							
+																																								{% block body %}
+																																									<h1>Reglement index</h1>
+																																								
+																																									<table class="table">
+																																										<thead>
+																																											<tr>
+																																												<th>Id</th>
+																																												<th>Num</th>
+																																												<th>Mat</th>
+																																												<th>Date</th>
+																																												<th>Duree</th>
+																																												<th>actions</th>
+																																											</tr>
+																																										</thead>
+																																										<tbody>
+																																											{% for reglement in reglements %}
+																																												<tr>
+																																													<td>{{ reglement.id }}</td>
+																																													<td>{{ reglement.num }}</td>
+																																													<td>{{ reglement.mat }}</td>
+																																													<td>{{ reglement.date ? reglement.date|date('Y-m-d') : '' }}</td>
+																																													<td>{{ reglement.duree }}</td>
+																																													<td>
+																																														<a href="{{ path('app_reglement_show', {'id': reglement.id}) }}">show</a>
+																																														<a href="{{ path('app_reglement_edit', {'id': reglement.id}) }}">edit</a>
+																																													</td>
+																																												</tr>
+																																											{% else %}
+																																												<tr>
+																																													<td colspan="6">no records found</td>
+																																												</tr>
+																																											{% endfor %}
+																																										</tbody>
+																																									</table>
+																																								
+																																									<a href="{{ path('app_reglement_new') }}">Create new</a>
+																																								{% endblock %} #}

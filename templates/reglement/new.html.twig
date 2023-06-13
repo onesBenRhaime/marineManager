@@ -1,12 +1,78 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}New Reglement
-{% endblock %}
-
 {% block body %}
-	<h1>Create new Reglement</h1>
 
-	{{ include('reglement/_form.html.twig') }}
 
-	<a href="{{ path('app_reglement_index') }}">back to list</a>
-{% endblock %}
+	<!-- Container Fluid-->
+	<div class="container-fluid" id="container-wrapper">
+		<div class="card">
+			<div class="d-sm-flex align-items-center py-3 justify-content-between">
+				<h5 class="mb-0 text-gray-800 pl-3">
+					+ Add New Settlement
+				</h5>
+
+
+			</li>
+
+		</ol>
+	</div>
+</div>
+
+<div class="row justify-content-center mt-3">
+	<div
+		class="col-md-10">
+		<!-- Form Basic -->
+		<div class="card mb-4">
+			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+				<h6 class="m-0 font-weight-bold text-primary">
+					New Settlement
+
+				</h6>
+			</div>
+
+
+			<div class="card-body">
+				{% if error %}
+					<div class="alert alert-danger">
+						{{ error }}
+					</div>
+				{% endif %}
+				{{form_start(form,{'attr':{'novalidate':'novalidate'}})}}
+
+				<div class="form-group">
+					{{form_label(form.num,'Num  : ',{'attr':{'class':'form-label'}})}}
+					{{form_widget(form.num,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{form_label(form.mat,'Matricule : ',{'attr':{'class':'form-label'}})}}
+					{{form_widget(form.mat,{'attr':{'class':'form-control'}})}}
+				</div>
+
+				<div class="form-group">
+					{{form_label(form.date,'Date : ',{'attr':{'class':'form-label'}})}}
+					{{form_widget(form.date,{'attr':{'class':'form-date'}})}}
+				</div>
+				<div class="form-group">
+					{{form_label(form.duree,'Duree : ',{'attr':{'class':'form-label'}})}}
+					{{form_widget(form.duree,{'attr':{'class':'form-control'}})}}
+				</div>
+
+				<div class="form-group">
+					{{form_label(form.idBateaux,'Bateaux : ',{'attr':{'class':'form-label'}})}}
+					{{form_widget(form.idBateaux,{'attr':{'class':'form-select'}})}}
+				</div>
+
+
+				{{form_widget(form.save,{'attr':{'class':'btn btn-primary w-80'}})}}
+
+				{{form_end(form)}}
+
+
+			</div>
+		</div>
+
+		<!-- Form Sizing -->
+
+		<!-- Horizontal Form -->
+	</div>
+</div><!--Row--></div><!---Container Fluid-->{% endblock %}

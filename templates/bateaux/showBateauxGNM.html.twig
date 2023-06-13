@@ -1,0 +1,134 @@
+{% extends 'baseGNM.html.twig' %}
+{% block body %}
+
+	<div
+		class="page-wrapper">
+
+		<!-- Container Fluid-->
+		<div class="container-fluid" id="container-wrapper">
+			<div class="row justify-content-center mt-3">
+				<div
+					class="col-md-10">
+					<!-- Form Basic -->
+					<div class="card mb-4">
+						<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold text-primary">
+								Boats
+							</h6>
+						</div>
+
+						<div class="card-body">
+							<div class="gocover" style="
+																																																																																																																																																																																								                        background: url(https://product.geniusocean.com/genius-bank/assets/images/33CiUFaI1641808748.gif)
+																																																																																																																																																																																								                          no-repeat scroll center center rgba(45, 45, 45, 0.5);
+																																																																																																																																																																																								                      "></div>
+
+							<table class="table">
+								<tbody>
+									<tr>
+										<th>Id</th>
+										<td>{{ bateaux.id }}</td>
+									</tr>
+									<tr>
+										<th>Mat</th>
+										<td>{{ bateaux.Mat }}</td>
+									</tr>
+									<tr>
+										<th>Port</th>
+										<td>{{ bateaux.port }}</td>
+									</tr>
+									<tr>
+										<th>Type</th>
+										<td>{{ bateaux.type }}</td>
+									</tr>
+									<tr>
+										<th>Longeur</th>
+										<td>{{ bateaux.longeur }}</td>
+									</tr>
+									<tr>
+										<th>Largeur</th>
+										<td>{{ bateaux.largeur }}</td>
+									</tr>
+									<tr>
+										<th>Hauteur</th>
+										<td>{{ bateaux.hauteur }}</td>
+									</tr>
+									<tr>
+										<th>Numserie</th>
+										<td>{{ bateaux.numserie }}</td>
+									</tr>
+									<tr>
+										<th>Marque</th>
+										<td>{{ bateaux.marque }}</td>
+									</tr>
+									<tr>
+										<th>Tonnage</th>
+										<td>{{ bateaux.tonnage }}</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Row-->
+		</div>
+		<!---Container Fluid-->
+	</div>
+
+{% endblock %}
+
+
+{# {% extends 'base.html.twig' %}
+																																																																							
+																																																																							{% block title %}Bateaux index{% endblock %}
+																																																																							
+																																																																							{% block body %}
+																																																																							    <h1>Bateaux index</h1>
+																																																																							
+																																																																							    <table class="table">
+																																																																							        <thead>
+																																																																							            <tr>
+																																																																							                <th>Id</th>
+																																																																							                <th>Mat</th>
+																																																																							                <th>Port</th>
+																																																																							                <th>Type</th>
+																																																																							                <th>Longeur</th>
+																																																																							                <th>Largeur</th>
+																																																																							                <th>Hauteur</th>
+																																																																							                <th>Numserie</th>
+																																																																							                <th>Marque</th>
+																																																																							                <th>Tonnage</th>
+																																																																							                <th>actions</th>
+																																																																							            </tr>
+																																																																							        </thead>
+																																																																							        <tbody>
+																																																																							        {% for bateaux in bateauxes %}
+																																																																							            <tr>
+																																																																							                <td>{{ bateaux.id }}</td>
+																																																																							                <td>{{ bateaux.Mat }}</td>
+																																																																							                <td>{{ bateaux.port }}</td>
+																																																																							                <td>{{ bateaux.type }}</td>
+																																																																							                <td>{{ bateaux.longeur }}</td>
+																																																																							                <td>{{ bateaux.largeur }}</td>
+																																																																							                <td>{{ bateaux.hauteur }}</td>
+																																																																							                <td>{{ bateaux.numserie }}</td>
+																																																																							                <td>{{ bateaux.marque }}</td>
+																																																																							                <td>{{ bateaux.tonnage }}</td>
+																																																																							                <td>
+																																																																							                    <a href="{{ path('app_bateaux_show', {'id': bateaux.id}) }}">show</a>
+																																																																							                    <a href="{{ path('app_bateaux_edit', {'id': bateaux.id}) }}">edit</a>
+																																																																							                </td>
+																																																																							            </tr>
+																																																																							        {% else %}
+																																																																							            <tr>
+																																																																							                <td colspan="11">no records found</td>
+																																																																							            </tr>
+																																																																							        {% endfor %}
+																																																																							        </tbody>
+																																																																							    </table>
+																																																																							
+																																																																							    <a href="{{ path('app_bateaux_new') }}">Create new</a>
+																																																																							{% endblock %} #}

@@ -24,11 +24,24 @@ class ReglementController extends AbstractController
     #[Route('/new', name: 'app_reglement_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ReglementRepository $reglementRepository): Response
     {
+        $reglements= $reglementRepository->findAll() ;       
         $reglement = new Reglement();
         $form = $this->createForm(ReglementType::class, $reglement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            for( $i=0;$i< count($reglements) ;$i++){
+                if($reglements[$i]->getIdBateaux()===$reglement->getIdBateaux()){
+                   // $error="Alerdy exist";
+                    return $this->renderForm('reglement/new.html.twig', [
+                        'reglement' => $reglement,
+                        'form' => $form,
+                        'error' => "Alerdy exist"
+                    ]);
+                }
+                break;
+            }
+
             $reglementRepository->save($reglement, true);
 
             return $this->redirectToRoute('app_reglement_index', [], Response::HTTP_SEE_OTHER);
@@ -37,6 +50,7 @@ class ReglementController extends AbstractController
         return $this->renderForm('reglement/new.html.twig', [
             'reglement' => $reglement,
             'form' => $form,
+            'error' => ""
         ]);
     }
 

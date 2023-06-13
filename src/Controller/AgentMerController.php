@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/agent/mer')]
 class AgentMerController extends AbstractController
 {
+   
     #[Route('/', name: 'app_agent_mer_index', methods: ['GET'])]
     public function index(ReclamationRepository $reclamationRepository,AgentMerRepository $agentMerRepository): Response
     {
@@ -95,4 +96,5 @@ class AgentMerController extends AbstractController
 
         return $this->redirectToRoute('app_agent_mer_index', [], Response::HTTP_SEE_OTHER);
     }
+    
 }

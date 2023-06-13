@@ -39,6 +39,35 @@ class BateauxRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function search($searchTerm)
+    {
+        $qb = $this->createQueryBuilder('cd');
+
+        if ($searchTerm) {
+            $qb->where('cd.title LIKE :searchTerm')
+                ->setParameter('searchTerm', '%' . $searchTerm . '%')
+                ->orderBy('cd.id', 'DESC');
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+    ////filtre AJAX
+    public function findEntitiesByString($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT e
+                 FROM App\Entity\Bateaux e
+                 WHERE e.Mat LIKE :str OR e.type LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
+    }
+
+
+////filtre ajax 
+
+
 //    /**
 //     * @return Bateaux[] Returns an array of Bateaux objects
 //     */

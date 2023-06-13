@@ -1,47 +1,60 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}AgentMer
-{% endblock %}
-
+{% extends 'baseAdmin.html.twig' %}
 {% block body %}
-	<h1>AgentMer</h1>
 
-	<table class="table">
-		<tbody>
-			<tr>
-				<th>Id</th>
-				<td>{{ agent_mer.id }}</td>
-			</tr>
-			<tr>
-				<th>Nom</th>
-				<td>{{ agent_mer.nom }}</td>
-			</tr>
-			<tr>
-				<th>Prenom</th>
-				<td>{{ agent_mer.prenom }}</td>
-			</tr>
-			<tr>
-				<th>Grade</th>
-				<td>{{ agent_mer.grade }}</td>
-			</tr>
-			<tr>
-				<th>Email</th>
-				<td>{{ agent_mer.email }}</td>
-			</tr>
-			<tr>
-				<th>Psw</th>
-				<td>{{ agent_mer.psw }}</td>
-			</tr>
-			<tr>
-				<th>Tel</th>
-				<td>{{ agent_mer.tel }}</td>
-			</tr>
-		</tbody>
-	</table>
+	<div
+		class="page-wrapper">
 
-	<a href="{{ path('app_agent_mer_index') }}">back to list</a>
+		<!-- Container Fluid-->
+		<div class="container-fluid" id="container-wrapper">
+			<div class="row justify-content-center mt-3">
+				<div
+					class="col-md-10">
+					<!-- Form Basic -->
+					<div class="card mb-4">
+						<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold text-primary">
+								Agent Mer
+							</h6>
+						</div>
 
-	<a href="{{ path('app_agent_mer_edit', {'id': agent_mer.id}) }}">edit</a>
+						<div class="card-body">
+							<table class="table">
+								<tbody>
+									<tr>
+										<th>Id</th>
+										<td>{{ agent_mer.id }}</td>
+									</tr>
+									<tr>
+										<th>Nom</th>
+										<td>{{ agent_mer.nom }}</td>
+									</tr>
+									<tr>
+										<th>Prenom</th>
+										<td>{{ agent_mer.prenom }}</td>
+									</tr>
+									<tr>
+										<th>Grade</th>
+										<td>{{ agent_mer.grade }}</td>
+									</tr>
+									<tr>
+										<th>Email</th>
+										<td>{{ agent_mer.email }}</td>
+									</tr>
+									<tr>
+										<th>Telephone</th>
+										<td>{{ agent_mer.tel }}</td>
+									</tr>
+								</tbody>
+							</table>
 
-	{{ include('agent_mer/_delete_form.html.twig') }}
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Row-->
+		</div>
+		<!---Container Fluid-->
+	</div>
+
 {% endblock %}

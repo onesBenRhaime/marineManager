@@ -1,43 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gnm index{% endblock %}
+{% block title %}Gnm index
+{% endblock %}
 
 {% block body %}
-    <h1>Gnm index</h1>
+	<h1>Gnm index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Tel</th>
-                <th>Psw</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for gnm in gnms %}
-            <tr>
-                <td>{{ gnm.id }}</td>
-                <td>{{ gnm.email }}</td>
-                <td>{{ gnm.nom }}</td>
-                <td>{{ gnm.prenom }}</td>
-                <td>{{ gnm.tel }}</td>
-                <td>{{ gnm.psw }}</td>
-                <td>
-                    <a href="{{ path('app_gnm_show', {'id': gnm.id}) }}">show</a>
-                    <a href="{{ path('app_gnm_edit', {'id': gnm.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Email</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Tel</th>
+				<th>Psw</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for gnm in gnms %}
+				<tr>
+					<td>{{ gnm.id }}</td>
+					<td>{{ gnm.email }}</td>
+					<td>{{ gnm.nom }}</td>
+					<td>{{ gnm.prenom }}</td>
+					<td>{{ gnm.tel }}</td>
+					<td>{{ gnm.psw }}</td>
+					<td>
+						<a href="{{ path('app_gnm_show', {'id': gnm.id}) }}">show</a>
+						<a href="{{ path('app_gnm_edit', {'id': gnm.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_gnm_new') }}">Create new</a>
+	<a href="{{ path('app_gnm_new') }}">Create new</a>
 {% endblock %}

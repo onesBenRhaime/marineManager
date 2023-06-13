@@ -27,7 +27,7 @@ class Reglement
     #[ORM\Column(length: 255)]
     private ?string $duree = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]    
     private ?Bateaux $idBateaux = null;
 
     public function getId(): ?int
