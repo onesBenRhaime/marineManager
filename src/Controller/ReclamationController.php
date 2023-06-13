@@ -13,13 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/reclamation')]
 class ReclamationController extends AbstractController
 {
-    #[Route('/', name: 'app_reclamation_index', methods: ['GET'])]
-    public function index(ReclamationRepository $reclamationRepository): Response
-    {
-        return $this->render('reclamation/index.html.twig', [
-            'reclamations' => $reclamationRepository->findAll(),
-        ]);
-    }
+   
 
     #[Route('/listReclamationGNM', name: 'app_listReclamationGNM', methods: ['GET'])]
     public function listReclamationGNM(ReclamationRepository $reclamationRepository): Response
